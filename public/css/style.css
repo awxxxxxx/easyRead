@@ -1,0 +1,7 @@
+#easy-popup {
+  position: absolute;
+  display: block;
+  top: 100px;
+  left: 100px;
+  background-color: #2aa198;
+}
