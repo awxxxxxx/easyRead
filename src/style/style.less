@@ -12,10 +12,26 @@
 .easyRadius(@radius) {
     border-radius: @radius;
 }
-#easy-popup {
+.easyPadding(@top, @right, @bottom, @left) {
 
-    .easyPosition(100px,100px,#2aa198);
+}
+#easy-popup {
+    max-width: 300px;
+    min-width: 200px;
+    border:1px solid rgb(197,197,197);
+    box-shadow: rgba(0,0,0,0.29) 0px 1px 1px; 
+    .easyPosition(200px,100px,inhert);
 }
 #easy-content {
 
+}
+#easy-close {
+    .easyPosition(-3px,96%,inhert);
+}
+#easy-arrow {
+    .easyPosition(100%,50%,inhert);
+    .easyBoxSize(0,0);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 9px solid rgb(197,197,197);
 }

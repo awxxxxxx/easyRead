@@ -1,7 +1,30 @@
 #easy-popup {
+  max-width: 300px;
+  min-width: 200px;
+  border: 1px solid #c5c5c5;
+  box-shadow: rgba(0, 0, 0, 0.29) 0px 1px 1px;
   position: absolute;
   display: block;
-  top: 100px;
+  top: 200px;
   left: 100px;
-  background-color: #2aa198;
+  background-color: inhert;
+}
+#easy-close {
+  position: absolute;
+  display: block;
+  top: -3px;
+  left: 96%;
+  background-color: inhert;
+}
+#easy-arrow {
+  position: absolute;
+  display: block;
+  top: 100%;
+  left: 50%;
+  background-color: inhert;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 9px solid #c5c5c5;
 }

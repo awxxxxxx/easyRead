@@ -23,29 +23,35 @@ gulp.task('style',function() {
 
 // js
 gulp.task('script',function() {
-    return gulp.src('./src/script/*.js')
-        .pipe(uglify())
-        .pipe(gulp.dest('./public/script'))
-        .pipe(notify({message: 'script complete'}))
+    return gulp.src('./public/script/*.js')
         .pipe(connect.reload());
 });
 
 //connect
 gulp.task('connect',function() {
     connect.server({
-        root: './',
+        root: [__dirname],//不能使用 './' 表示根目录否则会报错
         livereload: true
     });
+})
+
+//js
+gulp.task('html',function() {
+    return gulp.src('./easyRead.html')
+        .pipe(connect.reload());
 })
 
 // 监听
 gulp.task('watch',function() {
     //监听 js 文件
-    gulp.watch('./src/script/*.js',['script']);
+    gulp.watch(['./src/script/*.js','./public/script/*.js'],['script']);
 
     //监听 less 文件
     gulp.watch('./src/style/*.less',['style']);
+
+    //监听html
+    gulp.watch('./easyRead.html',['html']);
 })
 
 //设置默认任务
-gulp.task('default',['style','connect']);
+gulp.task('default',['style','connect','watch']);
